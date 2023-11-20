@@ -1,10 +1,10 @@
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
 
-app.get('/', function (req, res) {
-  var a = 1;
-  var b = 2;
-  var c = a + b;
+
+app.use(morgan('combined'))
+app.get('/', function (req, res) {  
   res.send('Hello World 2012 2003 04012003')
 })
 
