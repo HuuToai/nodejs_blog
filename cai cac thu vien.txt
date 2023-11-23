@@ -1,0 +1,1 @@
+npm i prettier lint-staged husky --save-dev // formatting code
