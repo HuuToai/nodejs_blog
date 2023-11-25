@@ -19,6 +19,9 @@ const Course = sequelize.define("Course", {
   image: {
     type: DataTypes.STRING,
   },
+  slug: {
+    type: DataTypes.STRING,
+  },
 });
 
 module.exports = Course;

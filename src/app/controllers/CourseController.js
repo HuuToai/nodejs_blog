@@ -4,38 +4,29 @@ class CourseController {
   //   //   // [GET] /news
   // [GET] /courses
   index(req, res, next) {
-    sequelize
-      .sync()
-      .then((Course) => res.render("view", { Course }))
-      .catch((error) => next(error));
-    // sequelize
-    //   .sync()
-    //   .then(() => {
-    //     Course.findAll()
-    //       .then((courses) => {
-    //         // Truyền dữ liệu vào view
-    //         // res.render("view", { courses: courses });
-    //         res.json(courses);
-    //       })
-    //       .catch((error) => {
-    //         next(error);
-    //       });
-    //   })
-    //   .catch((error) => {
-    //     next(error);
-    //   });
+    Course.findAll({
+      raw: true,
+    })
+      .then((courses) => {
+        res.render("view", { courses });
+      })
+      .catch((err) => {
+        next(err);
+      });
   }
-
-  //   // [GET] /courses
-  // async index(req, res) {
-  //   try {
-  //     const courses = await Course.findAll(); // Lấy tất cả các bản ghi từ cơ sở dữ liệu
-  //     res.json(courses); // Trả về dữ liệu dưới dạng JSON
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).json({ error: "Internal Server Error" });
-  //   }
-  // }
+  show(req, res, next) {
+    Course.findOne({
+      where: {
+        slug: req.params.slug,
+      },
+    })
+      .then((course) => {
+        res.render("courses/show");
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
 }
 
 module.exports = new CourseController();

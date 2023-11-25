@@ -30,7 +30,6 @@
     }
   },
   "devDependencies": {
-    "express-handlebars": "^7.1.2",
     "handlebars": "^4.7.8",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
