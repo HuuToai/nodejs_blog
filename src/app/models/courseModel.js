@@ -1,19 +1,24 @@
 // models/course.js
 const { DataTypes } = require("sequelize");
-module.exports = (sequelize) => {
-  const Course = sequelize.define("Course", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    image: {
-      type: DataTypes.STRING,
-    },
-  });
+const sequelize = require("../../config/db/sequelize.js");
 
-  return Course;
-};
+const Course = sequelize.define("Course", {
+  Course: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  image: {
+    type: DataTypes.STRING,
+  },
+});
+
+module.exports = Course;

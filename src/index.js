@@ -3,14 +3,16 @@ const path = require("path");
 const morgan = require("morgan");
 const { engine } = require("express-handlebars");
 const app = express();
+// app.use(bodyParser.json());
 const port = 3000;
 const route = require("./routes");
 const db = require("./config/db"); // Thay đổi 'your-db-module' thành tên file module của bạn
-
-//
 const { Sequelize } = require("sequelize");
-const courseModel = require("./app/models/courseModel");
+
+// //
 db.connect();
+
+// const CourseModel = require("./app/models/CourseModel");
 
 app.use(
   express.urlencoded({
@@ -27,8 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.engine("hbs", engine({ extname: ".hbs" }));
 app.set("view engine", "hbs");
 
-app.set("views", path.join(__dirname, "resources\\views")); //sửa lại nếu máy mac /
-// console.log('dirname', __dirname);
+app.set("views", path.join(__dirname, "resources", "views")); //sửa lại nếu máy mac /
 //router init
 route(app);
 

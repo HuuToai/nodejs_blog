@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const newsController = require('../app/controllers/NewsController');
+const newsController = require("../app/controllers/NewsController");
 
-router.use('/:slug', newsController.show);
-router.use('/', newsController.index); //newsController.index là funciton index trong NewsController
+router.get("/:slug", newsController.show);
+router.get("/", newsController.index); //newsController.index là funciton index trong NewsController
 
 module.exports = router;

@@ -1,1 +1,7 @@
 npm i prettier lint-staged husky --save-dev // formatting code
+
+npm install express-handlebars --save-dev
+npm install //thêm node_modules
+
+    "watch": "sass --watch src/resources/scss/:src/public/css/",            //mac
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",      //windów
