@@ -6,3 +6,12 @@ npm install //thêm node_modules
     "watch": "sass --watch src/resources/scss/:src/public/css/",            //mac
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",      //windów
     "handlebars": "^4.7.8",
+
+    yarn add sequelize-slugify //tạo slug
+
+    npm list node-sass
+
+    npm install node-sass@9.0.0
+
+    yarn add method-override // support put
+

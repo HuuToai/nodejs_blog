@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 
 function connect() {
-  const sequelize = new Sequelize("nodejs_blog", "root", "20122001", {
-    host: "localhost",
+  const sequelize = new Sequelize("v2wrml5xinov_nodejs", "v2wrml5xinov_userlocal", "adminlocal", {
+    host: "103.18.6.239",
     dialect: "mysql",
   });
 

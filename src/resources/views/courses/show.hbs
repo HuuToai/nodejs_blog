@@ -4,14 +4,13 @@
             <button>Học Ngay</button>
         </div>
         <div class="col-lg-9">
-            <h2>Xây dựng website với nodejs & Express</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/RP9HG3KBR9c?si=xypZ7EExm9LHR5PU"
+            <h2>{{courses.name}}</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{courses.video_id}}"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
 
         </div>
-        <p>xây dựng website trong thực tế với Nodejs & Express với cách chia sẻ chi tiết, tận tâm, dễ hiểu và chất giọng
-            giàu sức sống của người chia sẻ</p>
+        <p>{{courses.description}}</p>
     </div>
 </div>
