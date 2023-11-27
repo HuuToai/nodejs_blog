@@ -19,11 +19,61 @@
                 <td>{{this.description}}</td>
                 <td>
                     <a href="/courses/{{this.id}}/edit" class="btn btn-link">sửa</a>
-                    <a href="" class="btn btn-link">xóa</a>
+                    <a href="" class="btn btn-link" data-id="{{this.id}}" data-bs-toggle="modal"
+                        data-bs-target="#delete-course-modal">xóa</a>
                 </td>
             </tr>
-            {{/each}}
+            {{else}}
+            <tr>
+                <td colspan="5">Bạn chưa có khóa học nào <a href="/courses/create">Đăng khóa học mới</a></td>
+                {{/each}}
+
 
         </tbody>
     </table>
 </div>
+
+{{!-- confirm delete course --}}
+<div id="delete-course-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xóa khóa học</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn chắc chắn muốn xóa khóa học này không</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button id="btn-delete-course" type="button" class="btn btn-danger">Xóa bỏ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- delete hidden form --}}
+<form name="delete-course-form" method="post">
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var courseId;
+        var deleteform = document.forms['delete-course-form'];
+        var btnDeleteCourse = document.getElementById('btn-delete-course');
+
+
+        //when dialog confirm is clicked
+        $('#delete-course-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id'); // Extract info from data-* attributes
+            courseId = button.data('id');
+        });
+        //when delete course btn click
+        btnDeleteCourse.onclick = function (event) {
+            deleteform.action = '/courses/' + courseId + '/?_method=DELETE';//set thêm action cho form
+            deleteform.submit();
+        }
+    });
+
+</script>

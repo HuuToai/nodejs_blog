@@ -3,8 +3,8 @@ const sequelize = require("../../config/db/sequelize.js");
 class CourseController {
   //   //   // [GET] /news
   // [GET] /courses
-  index(req, res, next) {
-    Course.findAll({
+  async index(req, res, next) {
+    await Course.findAll({
       raw: true,
     })
       .then((courses) => {
@@ -40,11 +40,13 @@ class CourseController {
       const course = await Course.create({
         name: req.body.name,
         description: req.body.description,
+        image: req.body.image,
         video_id: req.body.video_id,
         level: req.body.level,
       });
 
-      res.status(201).json({ success: true, data: course });
+      res.status(201);
+      res.redirect("/me/stored/courses");
     } catch (error) {
       console.error("Lỗi khi tạo khóa học:", error);
       res.status(500).json({ success: false, error: "Lỗi khi tạo khóa học" });
@@ -77,6 +79,23 @@ class CourseController {
     )
       .then(() => {
         res.redirect("/me/stored/courses");
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
+  // [DELETE] /courses/:id
+  async destroy(req, res, next) {
+    await Course.destroy({
+      where: {
+        id: req.params.id,
+      },
+      // Thêm tùy chọn paranoid để thực hiện xóa mềm
+      // force: true sẽ thực hiện xóa cứng (mặc định), không cung cấp force sẽ thực hiện xóa mềm
+      paranoid: true, //muốn xóa hẳn thì bỏ cái này đi thì mặc định là force: true
+    })
+      .then(() => {
+        res.redirect("back");
       })
       .catch((err) => {
         next(err);

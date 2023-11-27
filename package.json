@@ -20,6 +20,7 @@
     "mysql2": "^3.6.5",
     "node-sass": "^9.0.0",
     "sequelize": "^6.35.1",
+    "unique-string": "^3.0.0",
     "yarn": "^1.22.21"
   },
   "lint-staged": {
