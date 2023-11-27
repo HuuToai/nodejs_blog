@@ -84,6 +84,20 @@ class CourseController {
         next(err);
       });
   }
+  forceDestroy(req, res, next) {
+    Course.destroy({
+      where: {
+        id: req.params.id,
+      },
+      force: true,
+    })
+      .then(() => {
+        res.redirect("back");
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
   // [DELETE] /courses/:id
   async destroy(req, res, next) {
     await Course.destroy({
@@ -100,6 +114,14 @@ class CourseController {
       .catch((err) => {
         next(err);
       });
+  }
+  // [PATCH] /courses/:id/restore
+  restore(req, res, next) {
+    Course.restore({ where: { id: req.params.id } })
+      .then(() => {
+        res.redirect("back");
+      })
+      .catch(next);
   }
 }
 
