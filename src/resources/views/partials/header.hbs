@@ -7,10 +7,24 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                </li>
+            </ul>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form method="get" action="/me/search" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" name="q" id="search-input"
+                            placeholder="tìm kiếm khóa học..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                        <a class="nav-link active" aria-current="page" href="/courses">Khóa học</a>
                     </li>
                 </ul>
                 <div class="dropdown">
