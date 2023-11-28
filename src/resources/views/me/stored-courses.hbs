@@ -2,7 +2,13 @@
 
     <div>
         <h3>khóa học của tôi</h3>
-        <a href="/me/trash/courses">Thùng rác</a>
+        {{#if count }}
+        <a class="btn btn-outline-danger" href="/me/trash/courses">Thùng rác <i class="fa fa-trash-o"></i>
+            ({{count}})</a>
+        {{/if}}
+    </div>
+    <div class="btn-create-courses">
+        <a href="/courses/create" class="btn btn-outline-primary create-courses">Đăng mới khóa học</a>
     </div>
     <table class="table table-hover table-striped">
         <thead>

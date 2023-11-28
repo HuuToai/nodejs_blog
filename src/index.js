@@ -41,7 +41,6 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources", "views")); //sửa lại nếu máy mac /
 //router init
 route(app);
-
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)
 );

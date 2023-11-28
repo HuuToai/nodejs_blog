@@ -761,7 +761,7 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.3:
 
 crypto-random-string@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-4.0.0.tgz#5a3cc53d7dd86183df5da0312816ceeeb5bb1fc2"
+  resolved "https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-4.0.0.tgz"
   integrity sha512-x8dy3RnvYdlUcPOjkEHqozhiwzKNSq7GcPuXFbnyMOCHxX8V3OgIg/pYuabl2sbUPfIJaeAQB7PMOK8DFIdoRA==
   dependencies:
     type-fest "^1.0.1"
@@ -1026,7 +1026,7 @@ express-handlebars-sections@^1.0.1:
 
 express-handlebars@^7.1.2:
   version "7.1.2"
-  resolved "https://registry.npmjs.org/express-handlebars/-/express-handlebars-7.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/express-handlebars/-/express-handlebars-7.1.2.tgz#2471673d11af46f496cba4098a705f0217232fda"
   integrity sha512-ss9d3mBChOLTEtyfzXCsxlItUxpgS3i4cb/F70G6Q5ohQzmD12XB4x/Y9U6YboeeYBJZt7WQ5yUNu7ZSQ/EGyQ==
   dependencies:
     glob "^10.3.3"
@@ -1154,7 +1154,7 @@ fs.realpath@^1.0.0:
 
 fsevents@~2.3.2:
   version "2.3.3"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.2:
@@ -3374,7 +3374,7 @@ unique-slug@^3.0.0:
 
 unique-string@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/unique-string/-/unique-string-3.0.0.tgz#84a1c377aff5fd7a8bc6b55d8244b2bd90d75b9a"
+  resolved "https://registry.npmjs.org/unique-string/-/unique-string-3.0.0.tgz"
   integrity sha512-VGXBUVwxKMBUznyffQweQABPRRW1vHZAbadFZud4pLFAqRGvv/96vafgjWFqzourzr8YonlQiPgH0YCJfawoGQ==
   dependencies:
     crypto-random-string "^4.0.0"

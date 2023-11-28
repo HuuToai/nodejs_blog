@@ -76,15 +76,15 @@ const Course = sequelize.define(
 //   },
 // });
 // Tự động cập nhật cơ sở dữ liệu để phản ánh các thay đổi
-Course.sync({
-  alter: true,
-})
-  .then(() => {
-    // console.log("Cơ sở dữ liệu đã được cập nhật thành công.");
-  })
-  .catch((error) => {
-    console.error("Lỗi khi cập nhật cơ sở dữ liệu:", error);
-  });
+// Course.sync({
+//   alter: true,
+// })
+//   .then(() => {
+//     // console.log("Cơ sở dữ liệu đã được cập nhật thành công.");
+//   })
+//   .catch((error) => {
+//     console.error("Lỗi khi cập nhật cơ sở dữ liệu:", error);
+//   });
 
 // Sử dụng sequelize-slugify
 slugify.slugifyModel(Course, {

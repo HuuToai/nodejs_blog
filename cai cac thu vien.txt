@@ -15,3 +15,4 @@ npm install //thêm node_modules
 
     yarn add method-override // support put
 
+yarn add express-handlebars --dev

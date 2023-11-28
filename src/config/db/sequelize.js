@@ -12,4 +12,19 @@ const sequelize = new Sequelize({
     timestamps: false,
   },
 });
-module.exports = sequelize;
+
+function close() {
+  // Đóng kết nối đến cơ sở dữ liệu nếu đối tượng Sequelize tồn tại
+  if (sequelize) {
+    sequelize
+      .close()
+      .then(() => {
+        console.log("Đã đóng kết nối đến cơ sở dữ liệu.");
+      })
+      .catch((err) => {
+        console.error("Không thể đóng kết nối đến cơ sở dữ liệu:", err);
+      });
+  }
+}
+
+(module.exports = sequelize), { close };
